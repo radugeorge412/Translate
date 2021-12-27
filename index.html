@@ -12,7 +12,6 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Translate Project</title>
-    <script type="module" src="/src/components.js"></script>
   </head>
   <body>
     <style>
@@ -25,7 +24,79 @@
         font-size: 62.5%;
         font-family: "Inter", sans-serif;
       }
+      .cards {
+        display: flex;
+      }
+      trans-card:nth-child(1) {
+        margin-left: 9.6rem;
+        margin-right: 2.4rem;
+        max-width: 50%;
+        flex: 1;
+      }
+      trans-card:nth-child(2) {
+        margin-right: 9.6rem;
+        max-width: 50%;
+        flex: 1;
+      }
+      price-card1 {
+        flex: 1;
+      }
+      price-card2 {
+        flex: 1;
+      }
+      .price {
+        padding: 9.6rem;
+      }
     </style>
+
     <nav-bar></nav-bar>
+
+    <custom-service></custom-service>
+
+    <div class="cards">
+      <trans-card
+        title="Traduceri documente oficiale"
+        line1="Actele de studii"
+        desc1="(adeverință, atestat profesional,
+            diplomă de bacalureat, diplomă de licență, diplomă de master,
+            diplomă de doctorat, foaie matricolă etc.)"
+        line2="Actele de identitate, de naștere/deces, și de căsătorie"
+        desc2="(carte de identitate/buletin, certificat de naștere, certificat de
+            căsătorie, certificat de divorț, certificat de deces, pașaport,
+            permis de ședere sau rezidență, permis de conducere, cerificat de
+            schimbare a numelui etc.)"
+        line3="Alte acte semnate și ștampilate de către o autoritate de stat
+              sau minister"
+        desc3=""
+      ></trans-card>
+      <trans-card
+        title="Traduceri documente neoficiale"
+        line1="Acte de identitate ale masinii"
+        desc1="(carte de identitate, talon, brevet, brief mașină, asigurare, factură, procură, contract de vânzare sau inchiriere etc.)"
+        line2="Acte juridice"
+        desc2="(act adițional, acord de confidențialitate, hotărâre judecătorească, act constitutiv, certificat de rezidență fiscală, certificat de înregistrare la Registrul Comerțului, contract de muncă, contract de prestări servicii, statut, hotărâre AGA, regulament, certificat constatator eliberat de ONRC sau de Registrul Comerțului din altă țară etc.)"
+        line3="Acte medicale"
+        desc3="(analize medicale, fișă medicală, bilet de internare/externare etc.)"
+      ></trans-card>
+    </div>
+
+    <step-comp></step-comp>
+    <div class="cards price">
+      <price-card1></price-card1>
+      <price-card2></price-card2>
+    </div>
+    <custom-details></custom-details>
+
+    <custom-footer></custom-footer>
+    <!-- 
+    <div id="aics" data-orientation="horizontal">
+      <div class="images">
+        <div class="image-rgt" data-src="/src/assets/test1.jpg"></div>
+        <div class="image-lft" data-src="/src/assets/test2.jpg"></div>
+      </div>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin"></script>
+    <script type="module" src="/src/components.js"></script>
   </body>
 </html>

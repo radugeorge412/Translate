@@ -53,6 +53,7 @@ export class Nav extends LitElement {
         margin: 0;
         padding: 0;
         display: flex;
+        justify-content: space-between;
         padding-top: 24px;
       }
       .btnContainer span {
@@ -65,7 +66,7 @@ export class Nav extends LitElement {
       }
 
       .linkContainer {
-        min-width: 46px;
+        max-width: 600px;
         padding: 8px;
         display: flex;
         align-items: center;
@@ -78,11 +79,11 @@ export class Nav extends LitElement {
         flex-basis: 0;
       }
       .telContainer {
+        flex-grow: 1;
+        flex-basis: 0;
         display: flex;
         align-items: center;
-        flex-grow: 1;
         justify-content: flex-end;
-        flex-basis: 0;
       }
 
       .linkContainer a {
@@ -105,11 +106,12 @@ export class Nav extends LitElement {
       }
 
       .switch {
-        margin: 0 2px;
+        margin: 0 5px;
+        font-size: 17px;
         position: relative;
         display: inline-block;
-        width: 2rem;
-        height: 1rem;
+        width: 20px;
+        height: 10px;
       }
 
       /* Hide default HTML checkbox */
@@ -127,25 +129,25 @@ export class Nav extends LitElement {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #0000fe;
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 30px;
       }
 
       .slider:before {
         position: absolute;
         content: "";
-        height: 0.75rem;
-        width: 0.75rem;
-        left: 1px;
-        bottom: 1.4px;
+        height: 9px;
+        width: 9px;
+        border-radius: 20px;
+        left: 0.3px;
+        bottom: 0.3px;
         background-color: white;
-        -webkit-transition: 0.2s;
-        transition: 0.2s;
+        transition: 0.4s;
       }
 
       input:checked + .slider {
-        background-color: #0000fe;
+        background-color: #2196f3;
       }
 
       input:focus + .slider {
@@ -153,18 +155,7 @@ export class Nav extends LitElement {
       }
 
       input:checked + .slider:before {
-        -webkit-transform: translateX(10px);
-        -ms-transform: translateX(10px);
-        transform: translateX(10px);
-      }
-
-      /* Rounded sliders */
-      .slider.round {
-        border-radius: 34px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
+        transform: translateX(8px);
       }
     `;
   }
