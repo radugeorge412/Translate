@@ -28,7 +28,9 @@ export class Nav extends LitElement {
         </div>
 
         <div class="linkContainer">
-          ${this.links.map((item) => html`<a href="/">${item}</a>`)}
+          <div class="linkuri">
+            ${this.links.map((item) => html`<a href="/">${item}</a>`)}
+          </div>
           <div class="btnContainer">
             <span>RO</span>
             <label class="switch">
@@ -42,12 +44,22 @@ export class Nav extends LitElement {
         <div class="telContainer">
           <span>Contact: ${this.tel}</span>
         </div>
+        <div class="burgerContainer">
+          <img class="burger" src="/src/assets/burger.svg" alt="icon" />
+        </div>
       </div>
     `;
   }
 
   static get styles() {
     return css`
+      .burger {
+        width: 2rem;
+        margin-right: 2.4rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        display: none;
+      }
       .container {
         height: 62 px;
         margin: 0;
@@ -155,7 +167,41 @@ export class Nav extends LitElement {
       }
 
       input:checked + .slider:before {
-        transform: translateX(8px);
+        transform: translateX(10.8px);
+      }
+
+      @media screen and (max-width: 800px) {
+        .linkContainer {
+          display: none;
+        }
+        .container {
+          padding: 3.8rem 2.4rem;
+          justify-content: space-between;
+        }
+        .telContainer {
+          align-self: center;
+          flex: 1;
+        }
+        .telContainer span {
+          margin: auto;
+        }
+        .burger {
+          display: block;
+          margin: 0;
+          position: absolute;
+          right: 0;
+          top: 9px;
+        }
+        .burgerContainer {
+          flex: 1;
+          position: relative;
+        }
+        .icon {
+          margin: 0;
+        }
+        .iconContainer {
+          flex: 1;
+        }
       }
     `;
   }

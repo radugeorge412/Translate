@@ -54,6 +54,29 @@ export class Footer extends LitElement {
       span {
         font-size: 16px;
       }
+
+      @media screen and (max-width: 800px) {
+        .container {
+          padding: 3.2rem 2.4rem;
+          position: relative;
+          height: 25rem;
+        }
+        span {
+          position: absolute;
+
+          bottom: 3.6rem;
+          left: 13rem;
+        }
+        img {
+          width: 3.2rem;
+          height: 3.2rem;
+          margin-bottom: 4rem;
+        }
+        ul {
+          align-items: center;
+          width: 100%;
+        }
+      }
     `;
   }
 }

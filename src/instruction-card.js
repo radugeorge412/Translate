@@ -44,6 +44,13 @@ export class InstCard extends LitElement {
       .instr {
         font-size: 1.6rem;
       }
+
+      @media screen and (max-width: 600px) {
+        .step {
+          font-size: 8.8rem;
+          margin-bottom: 3rem;
+        }
+      }
     `;
   }
 }

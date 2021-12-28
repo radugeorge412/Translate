@@ -31,7 +31,7 @@ export class PriceCard1 extends LitElement {
     return css`
       .container {
         color: white;
-        padding: 8.2rem;
+        padding: 5rem;
         background-color: #0000fe;
       }
 
@@ -44,6 +44,17 @@ export class PriceCard1 extends LitElement {
         font-size: 1.6rem;
         margin-top: 4rem;
         color: #e0e0e0;
+      }
+      @media screen and (max-width: 600px) {
+        .container {
+          padding: 6.2rem 3.3rem;
+          color: #0000fe;
+          background-color: rgba(0, 0, 254, 0.06);
+          width: 100%;
+        }
+        p {
+          color: rgb(23, 23, 23);
+        }
       }
     `;
   }

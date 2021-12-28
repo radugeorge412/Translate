@@ -85,6 +85,33 @@ export class InstructiuniComp extends LitElement {
       .title {
         font-size: 4.8rem;
       }
+
+      @media screen and (max-width: 600px) {
+        .instrContainer instr-card:nth-child(2) {
+          margin: 0;
+          margin-bottom: 5rem;
+        }
+        instr-card {
+          margin-bottom: 5rem;
+        }
+        .instrContainer {
+          flex-direction: column;
+          width: auto;
+        }
+        .container {
+          height: auto;
+        }
+        button {
+          position: relative;
+          margin-top: 5rem;
+        }
+        img {
+          width: 19rem;
+          height: 37rem;
+          right: 1.5rem;
+          bottom: -10rem;
+        }
+      }
     `;
   }
 }

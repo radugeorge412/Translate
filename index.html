@@ -12,6 +12,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Translate Project</title>
+    <script src="/src/slidermin.js"></script>
   </head>
   <body>
     <style>
@@ -45,15 +46,60 @@
         flex: 1;
       }
       .price {
+        display: flex;
         padding: 9.6rem;
+      }
+      #aics {
+        margin: 10rem auto;
+      }
+      @media screen and (max-width: 850px) {
+        .cards {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        trans-card:nth-child(1) {
+          margin: 4rem;
+          max-width: 100%;
+        }
+        trans-card:nth-child(2) {
+          margin: 3.4rem 4rem;
+          max-width: 100%;
+        }
+        .price {
+          margin-top: 20rem;
+          padding: 0;
+          flex-direction: column;
+        }
       }
     </style>
 
     <nav-bar></nav-bar>
 
+    <div
+      id="aics"
+      data-orientation="horizontal"
+      data-width="70%"
+      data-cursor="none"
+    >
+      <div class="images">
+        <div class="image-rgt" data-src="/src/assets/test1.jpg"></div>
+        <div class="image-lft" data-src="/src/assets/test2.jpg"></div>
+        <div class="ui">
+          <img
+            class="dragger"
+            src="/src/assets/drag.svg"
+            alt="dragger"
+            width="50"
+            height="50"
+          />
+        </div>
+      </div>
+    </div>
+
     <custom-service></custom-service>
 
-    <div class="cards">
+    <div class="cards traduceri">
       <trans-card
         title="Traduceri documente oficiale"
         line1="Actele de studii"
@@ -81,7 +127,7 @@
     </div>
 
     <step-comp></step-comp>
-    <div class="cards price">
+    <div class="price">
       <price-card1></price-card1>
       <price-card2></price-card2>
     </div>
@@ -96,7 +142,9 @@
       </div>
     </div> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery-anyimagecomparisonslider-plugin"></script>
     <script type="module" src="/src/components.js"></script>
+    <script>
+      new AnyImageComparisonSlider(document.getElementById("aics"));
+    </script>
   </body>
 </html>

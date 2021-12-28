@@ -28,6 +28,7 @@ export class Details extends LitElement {
       }
       h2{
           font-size: 4rem;
+          
       }
       p{
         font-size:1.6rem;
@@ -35,6 +36,17 @@ export class Details extends LitElement {
       }
       .content{
           width:60rem;
+      }
+
+      @media screen and (max-width:750px){
+        .content{
+          width:auto;
+        }
+        .container{
+          padding:2.4rem;
+          margin-bottom:10rem;
+        }
+
       }
     }`;
   }

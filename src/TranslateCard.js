@@ -56,7 +56,6 @@ export class Card extends LitElement {
         background-color: rgba(0, 0, 254, 0.04);
         padding: 4.8rem;
         max-width: 100%;
-        height: 400px;
       }
       .title {
         font-size: 2.4rem;
@@ -73,6 +72,20 @@ export class Card extends LitElement {
         font-size: 1.6rem;
         max-height: 25rem;
         overflow-y: auto;
+        line-height: 22px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        img {
+          display: none;
+        }
+        .content {
+          font-size: 1.4rem;
+          max-height: 100%;
+        }
+        .container {
+          padding: 2.4rem;
+        }
       }
     `;
   }

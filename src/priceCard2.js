@@ -24,11 +24,18 @@ export class PriceCard2 extends LitElement {
       }
 
       .container {
-        padding: 10rem;
+        padding: 5rem;
         background-color: rgba(0, 0, 254, 0.04);
         line-height: 22px;
         font-size: 1.6rem;
         color: #171717;
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          background-color: white;
+          padding: 4rem 2.4rem;
+        }
       }
     `;
   }

@@ -26,6 +26,7 @@ export class Servicii extends LitElement {
       .first {
         font-size: 4.8rem;
         margin-bottom: 3rem;
+        margin-bottom: 7rem;
       }
       .second {
         font-size: 2.8rem;
@@ -40,6 +41,25 @@ export class Servicii extends LitElement {
       .c1 {
         display: flex;
         align-items: center;
+      }
+
+      @media screen and (max-width: 500px) {
+        .first {
+          font-size: 3.2rem;
+          margin-bottom: 7rem;
+        }
+        .second {
+          font-size: 2.2rem;
+        }
+        span {
+          font-size: 1.4rem;
+        }
+        img {
+          width: 2rem;
+        }
+        .container {
+          height: 25rem;
+        }
       }
     `;
   }
