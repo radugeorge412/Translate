@@ -1,3 +1,4 @@
+import { Buttons } from "./buttons";
 import { Details } from "./details";
 import { Footer } from "./footer";
 import { InstCard } from "./instruction-card";
@@ -19,3 +20,4 @@ customElements.define("price-card1", PriceCard1);
 customElements.define("price-card2", PriceCard2);
 customElements.define("custom-details", Details);
 customElements.define("custom-footer", Footer);
+customElements.define("custom-btns", Buttons);

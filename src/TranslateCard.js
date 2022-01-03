@@ -3,6 +3,9 @@ import { LitElement, html, css } from "lit";
 export class Card extends LitElement {
   static get properties() {
     return {
+      image: {
+        type: String,
+      },
       title: {
         type: String,
       },
@@ -34,7 +37,7 @@ export class Card extends LitElement {
   render() {
     return html`
       <div class="container">
-        <img src="/src/assets/paper.svg" alt="image" />
+        <img src=${this.image} alt="image" />
         <p class="title">${this.title}</p>
         <div class="content">
           <p><span>-${this.line1}</span> ${this.desc1}</p>
@@ -55,7 +58,10 @@ export class Card extends LitElement {
       .container {
         background-color: rgba(0, 0, 254, 0.04);
         padding: 4.8rem;
-        max-width: 100%;
+      }
+      p:nth-child(3) {
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
       .title {
         font-size: 2.4rem;
@@ -74,8 +80,13 @@ export class Card extends LitElement {
         overflow-y: auto;
         line-height: 22px;
       }
-
       @media screen and (max-width: 1000px) {
+        .container {
+          padding: 2.4rem;
+        }
+      }
+
+      @media screen and (max-width: 850px) {
         img {
           display: none;
         }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/src/reset.css" media="screen" />
+    <link rel="stylesheet" href="/src/index.css" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,76 +16,20 @@
     <script src="/src/slidermin.js"></script>
   </head>
   <body>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      html {
-        font-size: 62.5%;
-        font-family: "Inter", sans-serif;
-      }
-      .cards {
-        display: flex;
-      }
-      trans-card:nth-child(1) {
-        margin-left: 9.6rem;
-        margin-right: 2.4rem;
-        max-width: 50%;
-        flex: 1;
-      }
-      trans-card:nth-child(2) {
-        margin-right: 9.6rem;
-        max-width: 50%;
-        flex: 1;
-      }
-      price-card1 {
-        flex: 1;
-      }
-      price-card2 {
-        flex: 1;
-      }
-      .price {
-        display: flex;
-        padding: 9.6rem;
-      }
-      #aics {
-        margin: 10rem auto;
-      }
-      @media screen and (max-width: 850px) {
-        .cards {
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        trans-card:nth-child(1) {
-          margin: 4rem;
-          max-width: 100%;
-        }
-        trans-card:nth-child(2) {
-          margin: 3.4rem 4rem;
-          max-width: 100%;
-        }
-        .price {
-          margin-top: 20rem;
-          padding: 0;
-          flex-direction: column;
-        }
-      }
-    </style>
-
     <nav-bar></nav-bar>
 
     <div
       id="aics"
       data-orientation="horizontal"
-      data-width="70%"
+      data-width="90%"
       data-cursor="none"
     >
       <div class="images">
-        <div class="image-rgt" data-src="/src/assets/test1.jpg"></div>
-        <div class="image-lft" data-src="/src/assets/test2.jpg"></div>
+        <div
+          class="image-rgt"
+          data-src="/src/assets/desktop_romanian.svg"
+        ></div>
+        <div class="image-lft" data-src="/src/assets/desktop_english.svg"></div>
         <div class="ui">
           <img
             class="dragger"
@@ -97,10 +42,13 @@
       </div>
     </div>
 
+    <custom-btns></custom-btns>
+
     <custom-service></custom-service>
 
     <div class="cards traduceri">
       <trans-card
+        image="/src/assets/off1.svg"
         title="Traduceri documente oficiale"
         line1="Actele de studii"
         desc1="(adeverință, atestat profesional,
@@ -116,6 +64,7 @@
         desc3=""
       ></trans-card>
       <trans-card
+        image="/src/assets/off2.svg"
         title="Traduceri documente neoficiale"
         line1="Acte de identitate ale masinii"
         desc1="(carte de identitate, talon, brevet, brief mașină, asigurare, factură, procură, contract de vânzare sau inchiriere etc.)"
@@ -134,13 +83,6 @@
     <custom-details></custom-details>
 
     <custom-footer></custom-footer>
-    <!-- 
-    <div id="aics" data-orientation="horizontal">
-      <div class="images">
-        <div class="image-rgt" data-src="/src/assets/test1.jpg"></div>
-        <div class="image-lft" data-src="/src/assets/test2.jpg"></div>
-      </div>
-    </div> -->
 
     <script type="module" src="/src/components.js"></script>
     <script>

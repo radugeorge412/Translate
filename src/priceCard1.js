@@ -50,7 +50,6 @@ export class PriceCard1 extends LitElement {
           padding: 6.2rem 3.3rem;
           color: #0000fe;
           background-color: rgba(0, 0, 254, 0.06);
-          width: 100%;
         }
         p {
           color: rgb(23, 23, 23);

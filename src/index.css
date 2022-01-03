@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+.cards {
+  display: flex;
+  align-items: stretch;
+}
+
+trans-card:nth-child(1) {
+  display: flex;
+  margin-left: 9.6rem;
+  margin-right: 2.4rem;
+  max-width: 50%;
+  flex: 1;
+  height: 100%;
+}
+trans-card:nth-child(2) {
+  display: flex;
+  margin-right: 9.6rem;
+  max-width: 50%;
+  flex: 1;
+}
+price-card1 {
+  flex: 1;
+  display: flex;
+}
+price-card2 {
+  flex: 1;
+  display: flex;
+}
+.price {
+  display: flex;
+  align-items: stretch;
+  padding: 9.6rem;
+}
+#aics {
+  margin: 9.4rem;
+}
+
+@media screen and (max-width: 1000px) {
+  trans-card:nth-child(1) {
+    margin: 2.4rem;
+    display: block;
+  }
+  trans-card:nth-child(2) {
+    margin: 2.4rem;
+    display: block;
+  }
+  #aics {
+    margin: 4rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  price-card1 {
+    display: block;
+  }
+  price-card2 {
+    display: block;
+  }
+  trans-card:nth-child(1) {
+    margin: 4rem;
+    max-width: 100%;
+  }
+  trans-card:nth-child(2) {
+    margin: 3.4rem 4rem;
+    max-width: 100%;
+  }
+  .price {
+    margin-top: 20rem;
+    padding: 0;
+    flex-direction: column;
+  }
+}

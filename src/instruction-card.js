@@ -42,6 +42,7 @@ export class InstCard extends LitElement {
         font-size: 12.2rem;
       }
       .instr {
+        margin-top: 3.6rem;
         font-size: 1.6rem;
       }
 

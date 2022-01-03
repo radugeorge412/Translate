@@ -37,7 +37,7 @@ export class InstructiuniComp extends LitElement {
           ></instr-card>
         </div>
         <img src="${this.image}" alt="image" />
-        <button>Începe acum</button>
+        <div class="center"><button>Începe acum</button></div>
       </div>
     `;
   }
@@ -48,9 +48,8 @@ export class InstructiuniComp extends LitElement {
         margin-top: 9rem;
         position: relative;
         background-color: black;
-        min-height: 90vh;
         color: white;
-        padding: 4rem;
+        padding: 9.6rem;
       }
 
       img {
@@ -65,17 +64,14 @@ export class InstructiuniComp extends LitElement {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        row-gap: 3rem;
+        column-gap: 4rem;
         width: calc(100% - 35rem);
       }
 
-      .instrContainer instr-card:nth-child(2) {
-        margin: 0 1.5rem;
-      }
-
       button {
-        position: absolute;
-        bottom: 3rem;
         background-color: white;
+        margin-top: 20rem;
         border: none;
         padding: 1.2rem 2.2rem;
         font-size: 2rem;
@@ -84,6 +80,34 @@ export class InstructiuniComp extends LitElement {
 
       .title {
         font-size: 4.8rem;
+        margin-bottom: 10rem;
+      }
+
+      @media screen and (max-width: 900px) {
+        button {
+          margin-top: 7rem;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .container {
+          padding: 4.8rem;
+        }
+        img {
+          height: 25rem;
+          width: 17rem;
+          bottom: 13rem;
+        }
+        instrContainer {
+          width: 100%;
+        }
+        .center {
+          display: flex;
+          align-items: cenetr;
+          justify-content: center;
+        }
+        .title {
+          margin-bottom: 4rem;
+        }
       }
 
       @media screen and (max-width: 600px) {
@@ -102,14 +126,15 @@ export class InstructiuniComp extends LitElement {
           height: auto;
         }
         button {
-          position: relative;
-          margin-top: 5rem;
+          margin: 5rem auto;
         }
         img {
-          width: 19rem;
-          height: 37rem;
-          right: 1.5rem;
-          bottom: -10rem;
+          bottom: 20rem;
+        }
+      }
+      @media screen and (max-width: 440px) {
+        img {
+          display: none;
         }
       }
     `;

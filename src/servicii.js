@@ -11,8 +11,9 @@ export class Servicii extends LitElement {
         font-family: "Inter", sans-serif;
       }
       .container {
-        height: 40rem;
         width: 100%;
+        margin-top: 10rem;
+        margin-bottom: 8rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,8 +26,7 @@ export class Servicii extends LitElement {
       }
       .first {
         font-size: 4.8rem;
-        margin-bottom: 3rem;
-        margin-bottom: 7rem;
+        margin-bottom: 4rem;
       }
       .second {
         font-size: 2.8rem;
@@ -46,7 +46,7 @@ export class Servicii extends LitElement {
       @media screen and (max-width: 500px) {
         .first {
           font-size: 3.2rem;
-          margin-bottom: 7rem;
+          margin-bottom: 2.4rem;
         }
         .second {
           font-size: 2.2rem;
@@ -58,7 +58,8 @@ export class Servicii extends LitElement {
           width: 2rem;
         }
         .container {
-          height: 25rem;
+          margin-top: 7rem;
+          margin-bottom: 5rem;
         }
       }
     `;

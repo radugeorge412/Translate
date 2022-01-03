@@ -44,16 +44,40 @@ export class Nav extends LitElement {
         <div class="telContainer">
           <span>Contact: ${this.tel}</span>
         </div>
-        <div class="burgerContainer">
+        <div class="burgerContainer" @click="${this._toggleBurger}">
           <img class="burger" src="/src/assets/burger.svg" alt="icon" />
         </div>
       </div>
     `;
   }
 
+  _toggleBurger() {
+    this.shadowRoot.querySelector(".linkContainer").classList.toggle("active");
+    this.shadowRoot.querySelector(".linkuri").classList.toggle("active");
+    this.shadowRoot.querySelector(".btnContainer").classList.toggle("active");
+    this.shadowRoot.querySelector(".container").classList.toggle("burgerOpen");
+    this.shadowRoot
+      .querySelector(".linkContainer")
+      .classList.toggle("burgerOpen");
+  }
+
   static get styles() {
     return css`
+      .burgerOpen {
+        background-color: #0000fe;
+        color: white;
+      }
+      .linkContainer.burgerOpen {
+        height: 100vh;
+        width: 100%;
+        left: 0;
+        color: white;
+        background-color: #0000fe;
+        align-items: space-between;
+        justify-content: center;
+      }
       .burger {
+        cursor: pointer;
         width: 2rem;
         margin-right: 2.4rem;
         -webkit-transform: scaleX(-1);
@@ -62,6 +86,7 @@ export class Nav extends LitElement {
       }
       .container {
         height: 62 px;
+        position: relative;
         margin: 0;
         padding: 0;
         display: flex;
@@ -170,18 +195,26 @@ export class Nav extends LitElement {
         transform: translateX(10.8px);
       }
 
+      @media screen and (max-width: 600px) {
+        .container {
+          padding: 3.8rem 2.4rem;
+        }
+      }
+
       @media screen and (max-width: 800px) {
         .linkContainer {
           display: none;
         }
         .container {
-          padding: 3.8rem 2.4rem;
+          position: relative;
+          padding: 3.8rem 4.8rem;
           justify-content: space-between;
         }
         .telContainer {
           align-self: center;
           flex: 1;
         }
+
         .telContainer span {
           margin: auto;
         }
@@ -202,6 +235,40 @@ export class Nav extends LitElement {
         .iconContainer {
           flex: 1;
         }
+
+        .btnContainer {
+          justify-content: center;
+        }
+      }
+
+      .linkContainer.active {
+        display: block;
+
+        z-index: 100;
+        position: absolute;
+        align-items: center;
+        justify-content: space-between;
+        right: 2.4rem;
+        left: 0;
+        top: 8rem;
+      }
+      .linkuri.active {
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50vh;
+        row-gap: 6.2rem;
+      }
+      .linkuri.active a {
+        margin-top: 1rem;
+        color: white;
+        font-size: 3.6rem;
+      }
+
+      .btnContainer.active {
+        margin-top: 1rem;
+        align-self: flex-end;
       }
     `;
   }

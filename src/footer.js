@@ -17,7 +17,7 @@ export class Footer extends LitElement {
             <li><a href="/">Link3</a></li>
             <li><a href="/">Link4</a></li>
           </ul>
-          <span>Contact ${this.tel}</span>
+          <div class="contact"><p>Contact ${this.tel}</p></div>
         </div>
       </div>
     `;
@@ -31,6 +31,7 @@ export class Footer extends LitElement {
       }
       ul {
         width: 40rem;
+        column-gap: 3rem;
         justify-content: space-between;
         display: flex;
         align-items: center;
@@ -46,12 +47,13 @@ export class Footer extends LitElement {
         text-decoration: none;
       }
       .content {
-        margin-top: 4rem;
+        margin-top: 2rem;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
       }
-      span {
+      p {
         font-size: 16px;
       }
 
@@ -59,14 +61,17 @@ export class Footer extends LitElement {
         .container {
           padding: 3.2rem 2.4rem;
           position: relative;
-          height: 25rem;
+          flex-wrap: wrap;
+          flex-direction: column;
+          row-gap: 8px;
         }
-        span {
-          position: absolute;
+        .contact {
+          margin-top: 3rem;
+          align-self: center;
+          flex-grow: 1;
+          text-align: center;
+        }
 
-          bottom: 3.6rem;
-          left: 13rem;
-        }
         img {
           width: 3.2rem;
           height: 3.2rem;
@@ -74,6 +79,7 @@ export class Footer extends LitElement {
         }
         ul {
           align-items: center;
+          flex-wrap: wrap;
           width: 100%;
         }
       }
