@@ -14,7 +14,7 @@ export class Nav extends LitElement {
 
   constructor() {
     super();
-    this.links = ["link1", "link2", "link3", "link4"];
+    this.links = ["Services", "Prices", "Steps", "Upload", "About"];
     this.tel = "+00000000000";
   }
 
@@ -34,7 +34,11 @@ export class Nav extends LitElement {
           <div class="btnContainer">
             <span>RO</span>
             <label class="switch">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                @click="${() =>
+                  window.dispatchEvent(new CustomEvent("languageChanged"))}"
+              />
               <span class="slider round"></span>
             </label>
             <span>EN</span>
@@ -42,7 +46,7 @@ export class Nav extends LitElement {
         </div>
 
         <div class="telContainer">
-          <span>Contact: ${this.tel}</span>
+          <p>Contact: ${this.tel}</p>
         </div>
         <div class="burgerContainer" @click="${this._toggleBurger}">
           <img class="burger" src="/src/assets/burger.svg" alt="icon" />
@@ -59,6 +63,29 @@ export class Nav extends LitElement {
     this.shadowRoot
       .querySelector(".linkContainer")
       .classList.toggle("burgerOpen");
+    if (
+      this.shadowRoot.querySelector(".burger").getAttribute("src") ==
+      "/src/assets/burger.svg"
+    ) {
+      this.shadowRoot
+        .querySelector(".burger")
+        .setAttribute("src", "/src/assets/close2.svg");
+    } else {
+      this.shadowRoot
+        .querySelector(".burger")
+        .setAttribute("src", "/src/assets/burger.svg");
+    }
+    if (
+      this.shadowRoot
+        .querySelector(".linkContainer")
+        .classList.contains("active")
+    ) {
+      this.shadowRoot.querySelector(".telContainer > p").style.borderColor =
+        "white";
+    } else {
+      this.shadowRoot.querySelector(".telContainer > p").style.borderColor =
+        "#0000fe";
+    }
   }
 
   static get styles() {
@@ -121,6 +148,7 @@ export class Nav extends LitElement {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        min-width: 20rem;
       }
 
       .linkContainer a {
@@ -131,10 +159,13 @@ export class Nav extends LitElement {
         margin-right: 5vw;
       }
 
-      .telContainer span {
+      .telContainer p {
         margin-right: 20%;
         font-size: 1.6rem;
         line-height: 16px;
+        padding-bottom: 0.35rem;
+        border-bottom: 2px solid #0000fe;
+        flex-shrink: 1;
       }
       .icon {
         width: 34px;
@@ -215,7 +246,7 @@ export class Nav extends LitElement {
           flex: 1;
         }
 
-        .telContainer span {
+        .telContainer p {
           margin: auto;
         }
         .burger {
@@ -243,22 +274,20 @@ export class Nav extends LitElement {
 
       .linkContainer.active {
         display: block;
-
         z-index: 100;
         position: absolute;
         align-items: center;
-        justify-content: space-between;
+        align-content: space-between;
         right: 2.4rem;
         left: 0;
-        top: 8rem;
+        top: 11rem;
       }
       .linkuri.active {
-        padding: 1.6rem;
+        padding: 3.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 50vh;
-        row-gap: 6.2rem;
+        row-gap: 4.2rem;
       }
       .linkuri.active a {
         margin-top: 1rem;
@@ -269,6 +298,11 @@ export class Nav extends LitElement {
       .btnContainer.active {
         margin-top: 1rem;
         align-self: flex-end;
+      }
+      @media screen and (max-width: 400px) {
+        .container {
+          padding: 3rem 1.8rem;
+        }
       }
     `;
   }

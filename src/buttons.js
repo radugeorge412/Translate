@@ -51,7 +51,7 @@ export class Buttons extends LitElement {
         background-color: #0000fe;
         color: white;
       }
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 600px) {
         .cont {
           flex-direction: column;
         }

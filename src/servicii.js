@@ -1,8 +1,34 @@
 import { LitElement, html, css } from "lit";
 
+const ro = {
+  lang: "ro",
+  title: "Serviciile noastre",
+};
+const en = {
+  lang: "en",
+  title: "Our services",
+};
+
 export class Servicii extends LitElement {
+  static get properties() {
+    return {
+      content: {
+        type: Object,
+      },
+      ro: {
+        type: Object,
+      },
+      en: {
+        type: Object,
+      },
+    };
+  }
+
   constructor() {
     super();
+    this.ro = Object.assign({}, ro);
+    // this.en = Object.assign({}, en);
+    this.content = Object.assign({}, this.ro);
   }
 
   static get styles() {
@@ -65,10 +91,36 @@ export class Servicii extends LitElement {
     `;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+
+    window.addEventListener("languageChanged", (e) => {
+      if (this.content.lang == "ro") {
+        this.content = Object.assign({}, this.en);
+      } else {
+        this.content = Object.assign({}, this.ro);
+      }
+
+      this.requestUpdate();
+    });
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener("languageChanged", (e) => {
+      if (this.content.lang == "ro") {
+        this.content = Object.assign({}, this.en);
+      } else {
+        this.content = { ...this.ro };
+      }
+    });
+    super.disconnectedCallback();
+  }
+
   render() {
+    console.log(this.content);
     return html`
       <div class="container">
-        <p class="first">Serviciile noastre</p>
+        <p class="first">${this.content.title}</p>
         <p class="second">Traduceri documente</p>
         <div class="c1">
           <span>Română</span>

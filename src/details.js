@@ -26,6 +26,7 @@ export class Details extends LitElement {
   static get styles() {
     return css`
     .big{
+      margin-top:4rem;
       display:flex;
       flex-wrap:wrap;
       padding-left:9.6rem;
